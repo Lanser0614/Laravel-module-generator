@@ -18,11 +18,11 @@ class ControllerTemplate implements ClassSimpleTemplateInterface
         return [
             'class_type' => 'class',
             'directory' => app_path() .  '/Modules/V1/'.$this->name.'/Http/Controllers',
-            'namespace' =>'App\Module\V1\\'.$this->name.'\Controllers',
+            'namespace' =>'App\Modules\V1\\'.$this->name.'\Controllers',
             'use' => [
                 'App\Http\Controllers\Controller',
-                'App\Module\V1\\'.$this->name.'\Repositories\Contracts\\'.'I'.$this->name.'ReadRepository',
-                'App\Module\V1\\'.$this->name.'\Repositories\Contracts\\'.'I'.$this->name.'WriteRepository',
+                'App\Modules\V1\\'.$this->name.'\Repositories\Contracts\\'.'I'.$this->name.'ReadRepository',
+                'App\Modules\V1\\'.$this->name.'\Repositories\Contracts\\'.'I'.$this->name.'WriteRepository',
             ],
             'class_name' => $this->name.'Controller',
             'extends' => 'Controller',

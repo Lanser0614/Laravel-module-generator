@@ -18,10 +18,10 @@ class GetAllDtoTemplate implements ClassSimpleTemplateInterface
         return [
             'class_type' => 'class',
             'directory' => app_path() .  '/Modules/V1/'.$this->name.'/DTO',
-            'namespace' =>'App\Module\V1\\'.$this->name.'\DTO',
+            'namespace' =>'App\Modules\V1\\'.$this->name.'\DTO',
             'use' => [
                 'App\DTO\BaseDTO',
-                'App\Module\V1\\'.$this->name.'\Http\Requests\\'.$this->name.'GetAllRequest'
+                'App\Modules\V1\\'.$this->name.'\Http\Requests\\'.$this->name.'GetAllRequest'
             ],
             'class_name' => $this->name.'GetAllDTO',
             'extends' => 'BaseDTO',

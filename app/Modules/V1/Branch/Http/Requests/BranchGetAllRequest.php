@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Module\V1\Branch\Http\Requests;
+namespace App\Modules\V1\Branch\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -18,7 +18,7 @@ class BranchGetAllRequest extends FormRequest
      public function rules()
                 {
                     return [
-                        
+
                     ];
                 }
 

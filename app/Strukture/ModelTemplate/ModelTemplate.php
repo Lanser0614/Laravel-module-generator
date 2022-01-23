@@ -18,7 +18,7 @@ class ModelTemplate  implements ClassSimpleTemplateInterface
         return [
             'class_type' => 'class',
             'directory' => app_path() .  '/Modules/V1/'.$this->name.'/Models',
-            'namespace' =>'App\Module\V1\\'.$this->name.'\Models',
+            'namespace' =>'App\Modules\V1\\'.$this->name.'\Models',
             'use' => [
                 'Illuminate\Database\Eloquent\Model;',
             ],

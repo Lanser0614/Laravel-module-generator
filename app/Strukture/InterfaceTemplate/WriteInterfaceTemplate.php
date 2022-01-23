@@ -18,7 +18,7 @@ class WriteInterfaceTemplate implements InterfaceSimpleTemplateInterface
         return [
             'directory' => app_path() . '/Modules/V1/'.$this->name.'/Repositories/Contracts',
             'interface_name' =>'I'.$this->name.'WriteRepository',
-            'namespace' => 'App\Module\V1\\'.$this->name.'\Repositories\Contracts',
+            'namespace' => 'App\Modules\V1\\'.$this->name.'\Repositories\Contracts',
             'functions' => [
                 'public function create()',
                 'public function update()',

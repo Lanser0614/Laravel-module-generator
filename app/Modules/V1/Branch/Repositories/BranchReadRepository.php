@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Module\V1\Branch\Repositories;
+namespace App\Modules\V1\Branch\Repositories;
 
-use App\Module\V1\Branch\Repositories\Contracts\IBranchReadRepository;
-use App\Module\V1\Branch\Models\Branch;
+use App\Modules\V1\Branch\Repositories\Contracts\IBranchReadRepository;
+use App\Modules\V1\Branch\Models\Branch;
 
 /**
  */

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Module\V1\Branch\Repositories\Contracts;
+namespace App\Modules\V1\Branch\Repositories\Contracts;
 
 /**
  */

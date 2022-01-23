@@ -18,10 +18,10 @@ class WriteRepositoryTemplate implements ClassSimpleTemplateInterface
         return [
             'class_type' => 'class',
             'directory' => app_path() .  '/Modules/V1/'.$this->name.'/Repositories',
-            'namespace' =>'App\Module\V1\\'.$this->name.'\Repositories',
+            'namespace' =>'App\Modules\V1\\'.$this->name.'\Repositories',
             'use' => [
-                'App\Module\V1\\'.$this->name.'\Repositories\Contracts\\'.'I'.$this->name.'WriteRepository',
-                'App\Module\V1\\'.$this->name.'\Models\\'.$this->name,
+                'App\Modules\V1\\'.$this->name.'\Repositories\Contracts\\'.'I'.$this->name.'WriteRepository',
+                'App\Modules\V1\\'.$this->name.'\Models\\'.$this->name,
             ],
             'class_name' => $this->name.'WriteRepository',
             'extends' => '',

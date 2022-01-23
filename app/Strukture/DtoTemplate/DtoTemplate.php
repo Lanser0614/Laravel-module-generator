@@ -18,10 +18,10 @@ class DtoTemplate  implements ClassSimpleTemplateInterface
         return [
             'class_type' => 'class',
             'directory' => app_path() .  '/Modules/V1/'.$this->name.'/DTO',
-            'namespace' =>'App\Module\V1\\'.$this->name.'\DTO',
+            'namespace' =>'App\Modules\V1\\'.$this->name.'\DTO',
             'use' => [
                 'App\DTO\BaseDTO',
-                'App\Module\V1\\'.$this->name.'\Http\Requests\\'.$this->name.'CreateRequest'
+                'App\Modules\V1\\'.$this->name.'\Http\Requests\\'.$this->name.'CreateRequest'
             ],
             'class_name' => $this->name.'CreateDTO',
             'extends' => 'BaseDTO',

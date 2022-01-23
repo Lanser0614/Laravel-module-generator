@@ -18,7 +18,7 @@ class GetAllRequestTemplate implements ClassSimpleTemplateInterface
         return [
             'class_type' => 'class',
             'directory' => app_path() .  '/Modules/V1/'.$this->name.'/Http/Requests',
-            'namespace' =>'App\Module\V1\\'.$this->name.'\Http\Requests',
+            'namespace' =>'App\Modules\V1\\'.$this->name.'\Http\Requests',
             'use' => [
                 'Illuminate\Foundation\Http\FormRequest',
             ],
@@ -39,7 +39,7 @@ class GetAllRequestTemplate implements ClassSimpleTemplateInterface
                 ' public function rules()
                 {
                     return [
-                        
+
                     ];
                 }',
 

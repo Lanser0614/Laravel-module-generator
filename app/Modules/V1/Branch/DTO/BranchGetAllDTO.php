@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Module\V1\Branch\DTO;
+namespace App\Modules\V1\Branch\DTO;
 
 use App\DTO\BaseDTO;
-use App\Module\V1\Branch\Http\Requests\BranchGetAllRequest;
+use App\Modules\V1\Branch\Http\Requests\BranchGetAllRequest;
 
 /**
  */

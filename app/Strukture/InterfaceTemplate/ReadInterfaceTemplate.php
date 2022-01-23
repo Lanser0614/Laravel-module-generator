@@ -17,7 +17,7 @@ class ReadInterfaceTemplate implements InterfaceSimpleTemplateInterface
         return [
             'directory' => app_path() . '/Modules/V1/'.$this->name.'/Repositories/Contracts',
             'interface_name' =>'I'.$this->name.'ReadRepository',
-            'namespace' => 'App\Module\V1\\'.$this->name.'\Repositories\Contracts',
+            'namespace' => 'App\Modules\V1\\'.$this->name.'\Repositories\Contracts',
             'functions' => [
                 'public function get()',
                 'public function getById($id)'

@@ -18,7 +18,7 @@ class ResourceTemplate implements ClassSimpleTemplateInterface
         return [
             'class_type' => 'class',
             'directory' => app_path() .  '/Modules/V1/'.$this->name.'/Http/Resources',
-            'namespace' =>'App\Module\V1\\'.$this->name.'\Http\Resources',
+            'namespace' =>'App\Modules\V1\\'.$this->name.'\Http\Resources',
             'use' => [
                 'Illuminate\Http\Resources\Json\JsonResource',
             ],
@@ -35,7 +35,7 @@ class ResourceTemplate implements ClassSimpleTemplateInterface
                 '  public function toArray($request)
                 {
                     return [
-                       
+
                     ];
                 }',
             ],

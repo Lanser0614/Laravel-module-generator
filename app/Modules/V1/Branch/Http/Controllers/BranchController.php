@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Module\V1\Branch\Controllers;
+namespace App\Modules\V1\Branch\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Module\V1\Branch\Repositories\Contracts\IBranchReadRepository;
-use App\Module\V1\Branch\Repositories\Contracts\IBranchWriteRepository;
+use App\Modules\V1\Branch\Repositories\Contracts\IBranchReadRepository;
+use App\Modules\V1\Branch\Repositories\Contracts\IBranchWriteRepository;
 
 /**
  */

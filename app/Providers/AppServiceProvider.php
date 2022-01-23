@@ -3,7 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Module\V1\Branch\Providers\BranchServiceProvider;
+use App\Modules\V1\Branch\Providers\BranchServiceProvider;
+
 
 class AppServiceProvider extends ServiceProvider
 {
