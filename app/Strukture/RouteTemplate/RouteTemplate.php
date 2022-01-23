@@ -21,10 +21,12 @@ class RouteTemplate implements RouteSimpleTemplateInterface
         return [
             'route_name' => 'route',
             'directory' => app_path() .  '/Modules/V1/'.$this->name.'/routes',
-            'namespace' => 'App\Modules\V1\\'.$this->name.'\routes',
+            'namespace' => mb_strtolower($this->name).'-v1',
             'prefix' => '/'.mb_strtolower($this->name),
+            // 'as' => mb_strtolower($this->name).'-v1',
             'use' => [
-                'Illuminate\Support\Facades\Route'
+                'Illuminate\Support\Facades\Route',
+                'App\Modules\V1\\'.$this->name.'\Http\Controllers\\'.$this->name.'Controller',
             ],
             'middleware' => 'api',
             'uri' => [
@@ -35,7 +37,7 @@ class RouteTemplate implements RouteSimpleTemplateInterface
                     ],
                     'method' => 'get',
                     'function' => 'getPets',
-                    'class' => 'test',
+                    'class' => $this->name.'Controller',
                     'key' => 'test',
                     'type' => 'api'// api, api
                 ],
@@ -47,13 +49,13 @@ class RouteTemplate implements RouteSimpleTemplateInterface
                     ],
                     'method' => 'post',
                     'function' => 'createPet',
-                    'class' => 'test',
+                    'class' => $this->name.'Controller',
                     'key' => 'test',
                     'type' => 'api'// api, api
                 ],
                 [
                     'uri' => '/pets/{id}/{ss}',
-                    'class' => 'test',
+                    'class' => $this->name.'Controller',
                     'key' => 'test',
                     'rules' => [
                         'name' => 'required',
@@ -65,7 +67,7 @@ class RouteTemplate implements RouteSimpleTemplateInterface
                 ],
                 [
                     'uri' => '/pets/{i}',
-                    'class' => 'test',
+                    'class' => $this->name.'Controller',
                     'key' => 'test',
                     'rules' => [
                         'name' => 'required',
