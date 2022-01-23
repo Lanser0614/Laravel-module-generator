@@ -55,6 +55,17 @@ class ServiceProviderTemplate implements ClassSimpleTemplateInterface
                     $this->app->bind(I'.$this->name.'WriteRepository::class, '.$this->name.'WriteRepository::class);
                     $this->app->bind(I'.$this->name.'ReadRepository::class, '.$this->name.'ReadRepository::class);
                 }',
+                ' protected function registerConfig()
+                {
+                    $this->mergeConfigFrom(
+                        __DIR__ . "/../config/config.php", "branch"
+                    );
+                }',
+                '   protected function registerMigrations()
+                {
+                    $this->loadMigrationsFrom(__DIR__ . "/../database/migrations");
+                }',
+
                 'public function routes()
                 {
                     Route::
@@ -63,16 +74,6 @@ class ServiceProviderTemplate implements ClassSimpleTemplateInterface
                         ->middleware("api")
                         ->group(__DIR__ . "/../routes/route.php");
                 }',
-                '   protected function registerMigrations()
-                {
-                    $this->loadMigrationsFrom(__DIR__ . "/../database/migrations");
-                }',
-                ' protected function registerConfig()
-                {
-                    $this->mergeConfigFrom(
-                        __DIR__ . "/../config/config.php", "branch"
-                    );
-                }'
             ],
             'annotations'=>[]
         ];
