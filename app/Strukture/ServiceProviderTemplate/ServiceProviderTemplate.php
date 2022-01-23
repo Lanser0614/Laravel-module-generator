@@ -23,7 +23,7 @@ class ServiceProviderTemplate implements ClassSimpleTemplateInterface
                 'App\Modules\V1\\'.$this->name.'\Repositories\Contracts\\'.'I'.$this->name.'ReadRepository',
                 'App\Modules\V1\\'.$this->name.'\Repositories\Contracts\\'.'I'.$this->name.'WriteRepository',
                 'App\Modules\V1\\'.$this->name.'\Repositories\\'.$this->name.'WriteRepository',
-                'App\Modules\V1\\'.$this->name.'\Repositories\Contracts\\'.$this->name.'ReadRepository',
+                'App\Modules\V1\\'.$this->name.'\Repositories\\'.$this->name.'ReadRepository',
                 'Illuminate\Support\Facades\Route',
                 'Illuminate\Support\ServiceProvider',
                 'App\Modules\V1\\'.$this->name.'\Models\\'.$this->name,
@@ -58,7 +58,7 @@ class ServiceProviderTemplate implements ClassSimpleTemplateInterface
                 ' protected function registerConfig()
                 {
                     $this->mergeConfigFrom(
-                        __DIR__ . "/../config/config.php", "branch"
+                        __DIR__ . "/../config/config.php", "'.mb_strtolower($this->name).'"
                     );
                 }',
                 '   protected function registerMigrations()

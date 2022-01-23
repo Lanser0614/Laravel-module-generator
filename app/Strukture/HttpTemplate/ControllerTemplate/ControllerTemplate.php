@@ -18,7 +18,7 @@ class ControllerTemplate implements ClassSimpleTemplateInterface
         return [
             'class_type' => 'class',
             'directory' => app_path() .  '/Modules/V1/'.$this->name.'/Http/Controllers',
-            'namespace' =>'App\Modules\V1\\'.$this->name.'\Controllers',
+            'namespace' =>'App\Modules\V1\\'.$this->name.'\Http\Controllers',
             'use' => [
                 'App\Http\Controllers\Controller',
                 'App\Modules\V1\\'.$this->name.'\Repositories\Contracts\\'.'I'.$this->name.'ReadRepository',
@@ -40,7 +40,7 @@ class ControllerTemplate implements ClassSimpleTemplateInterface
                     $this->write = $write;
                 }',
                 'public function all('.$this->name.'GetAllDTO $request){
-                    return new BranchGetAllCollection($this->branchReadRepository->get($request->getDTO()));
+                    return new BranchGetAllCollection($this->read->get($request->getDTO()));
                 }',
                 'public function update(){}'
             ],

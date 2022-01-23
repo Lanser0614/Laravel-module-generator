@@ -36,7 +36,7 @@ class ReadRepositoryTemplate implements ClassSimpleTemplateInterface
                 'public function __construct('.$this->name.' $model){
                     $this->model = $model;
                 }',
-                'public function get(){
+                'public function get($data){
                     return $this->model::all();
                 }',
                 'public function getById($id){

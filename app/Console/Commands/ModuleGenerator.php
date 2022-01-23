@@ -55,6 +55,11 @@ class ModuleGenerator extends Command
      */
     public function handle()
     {
+        $filename = 'App/Modules/V1/'.$this->argument('name');
+
+        if (is_dir($filename)) {
+            dd('This module alredy exist');
+        }else{
         LaravelFileGenerator::publish(
             new ReadInterfaceTemplate($this->argument('name')),
             new WriteInterfaceTemplate($this->argument('name')),
@@ -71,6 +76,8 @@ class ModuleGenerator extends Command
             new GetAllDtoTemplate($this->argument('name')),
             new ServiceProviderTemplate($this->argument('name')),
             new RouteTemplate($this->argument('name')),
+
         );
+    }
     }
 }
