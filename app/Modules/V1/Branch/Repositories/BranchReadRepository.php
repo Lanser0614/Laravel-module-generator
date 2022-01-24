@@ -12,16 +12,15 @@ class BranchReadRepository  implements IBranchReadRepository
 
     protected $model;
 
+
     public function __construct(Branch $model)
     {
         $this->model = $model;
     }
-
     public function get($data)
     {
         return $this->model::all();
     }
-
     public function getById($id)
     {
         return $this->model::all()->find($id);

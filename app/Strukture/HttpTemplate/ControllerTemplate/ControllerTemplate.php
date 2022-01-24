@@ -20,12 +20,12 @@ class ControllerTemplate implements ClassSimpleTemplateInterface
             'directory' => app_path() .  '/Modules/V1/'.$this->name.'/Http/Controllers',
             'namespace' =>'App\Modules\V1\\'.$this->name.'\Http\Controllers',
             'use' => [
-                'App\Http\Controllers\Controller',
+                'App\Http\Controllers\V1\BaseApiController',
                 'App\Modules\V1\\'.$this->name.'\Repositories\Contracts\\'.'I'.$this->name.'ReadRepository',
                 'App\Modules\V1\\'.$this->name.'\Repositories\Contracts\\'.'I'.$this->name.'WriteRepository',
             ],
             'class_name' => $this->name.'Controller',
-            'extends' => 'Controller',
+            'extends' => 'BaseApiController',
             'implements' => [],
             'traits' => [
 
@@ -40,9 +40,40 @@ class ControllerTemplate implements ClassSimpleTemplateInterface
                     $this->write = $write;
                 }',
                 'public function all('.$this->name.'GetAllDTO $request){
-                    return new BranchGetAllCollection($this->read->get($request->getDTO()));
+                    return new '.$this->name.'GetAllCollection($this->read->get($request->getDTO()));
                 }',
-                'public function update(){}'
+                'public function show($id){
+                    $data = $this->read->getByID($id);
+                    if ($data !== null){
+                        return $this->responseWithData(new '.$this->name.'Resource($data));
+                    }else{
+                        return $this->responseWithMessage(404);
+                    }
+                }',
+                '  public function create('.$this->name.'CreateDTO  $request){
+                    $result = $this->write->create($request);
+                    if ($result["status"]){
+                        return $this->responseWithData(new '.$this->name.'Resource($result["data"]),201);
+                    }else{
+                        return $this->responseWithMessage(500);
+                    }
+                }',
+                'public function updateContent('.$this->name.'CreateDTO $request,$id){
+                    $result = $this->write->updateContent($request, $id);
+                    if ($result["status"]){
+                        return $this->responseWithData(new BranchResource($result["data"]),202);
+                    }else{
+                        return $this->responseWithMessage(500);
+                    }
+                 }',
+                 '  public function delete($id){
+                    $result = $this->write->delete($id);
+                    if ($result["status"]){
+                        return $this->responseWithMessage(202);
+                    }else{
+                        return $this->responseWithMessage(500);
+                    }
+                }'
             ],
             'annotations'=>[]
         ];

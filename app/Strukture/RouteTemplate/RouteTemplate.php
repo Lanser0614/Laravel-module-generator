@@ -31,50 +31,58 @@ class RouteTemplate implements RouteSimpleTemplateInterface
             'middleware' => 'api',
             'uri' => [
                 [
-                    'uri' => '/pets',
+                    'uri' => '/',
                     'rules' => [
 
                     ],
                     'method' => 'get',
-                    'function' => 'getPets',
+                    'function' => 'all',
                     'class' => $this->name.'Controller',
-                    'key' => 'test',
+                    'key' => 'all',
                     'type' => 'api'// api, api
                 ],
                 [
-                    'uri' => '/pets',
+                    'uri' => '/{id?}',
                     'rules' => [
                         'name' => 'required|nullable',
                         'id' => 'integer'
                     ],
-                    'method' => 'post',
-                    'function' => 'createPet',
+                    'method' => 'get',
+                    'function' => 'show',
                     'class' => $this->name.'Controller',
-                    'key' => 'test',
+                    'key' => 'show',
                     'type' => 'api'// api, api
                 ],
                 [
-                    'uri' => '/pets/{id}/{ss}',
+                    'uri' => '/',
                     'class' => $this->name.'Controller',
-                    'key' => 'test',
+                    'function' => 'create',
+                    'key' => 'create',
                     'rules' => [
-                        'name' => 'required',
-                        'id' => 'integer'
+
+                    ],
+                    'method' => 'post',
+                    'type' => 'api'// api, api
+                ],
+                [
+                    'uri' => '/{id?}',
+                    'class' => $this->name.'Controller',
+                    'key' => 'updateContent',
+                    'rules' => [
+
                     ],
                     'method' => 'put',
-                    'function' => 'updatePet',
+                    'function' => 'updateContent',
                     'type' => 'api'// api, api
                 ],
                 [
-                    'uri' => '/pets/{i}',
+                    'uri' => '/{id?}',
                     'class' => $this->name.'Controller',
-                    'key' => 'test',
+                    'key' => 'delete',
                     'rules' => [
-                        'name' => 'required',
-                        'id' => 'integer'
                     ],
-                    'method' => 'patch',
-                    'function' => 'updatePetWithSomething',
+                    'method' => 'delete',
+                    'function' => 'delete',
                     'type' => 'api'// api, api
                 ],
             ],

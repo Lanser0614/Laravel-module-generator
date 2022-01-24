@@ -12,8 +12,9 @@ Route::group([
     'as' => 'branch-v1',
 
 ], function ($router) {
-    Route::get('/pets', [BranchController::class, 'getPets'])->name('test');
-    Route::post('/pets', [BranchController::class, 'createPet'])->name('test');
-    Route::put('/pets/{id}/{ss}', [BranchController::class, 'updatePet'])->name('test');
-    Route::patch('/pets/{i}', [BranchController::class, 'updatePetWithSomething'])->name('test');
+    Route::get('/', [BranchController::class, 'all'])->name('all');
+    Route::get('/{id?}', [BranchController::class, 'show'])->name('show');
+    Route::post('/', [BranchController::class, 'create'])->name('create');
+    Route::put('/{id?}', [BranchController::class, 'updateContent'])->name('updateContent');
+    Route::delete('/{id?}', [BranchController::class, 'delete'])->name('delete');
 });

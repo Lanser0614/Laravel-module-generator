@@ -10,13 +10,18 @@ class BranchGetAllRequest extends FormRequest
 {
 
 
+
     public function authorize(): bool
     {
         return true;
     }
-
     public function rules()
     {
-        return [];
+        return [
+            "perPage" => ["numeric"],
+            "page" => ["numeric"],
+            "id" => ["numeric"],
+            "name" => ["string"],
+        ];
     }
 }

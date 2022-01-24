@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;;
 class Branch extends Model
 {
 
-    protected $table;
+    protected $table = 'name';
     protected $connection;
-    protected $fillable = [];
+    protected $fillable = ['name'];
 }

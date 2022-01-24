@@ -39,7 +39,9 @@ class GetAllRequestTemplate implements ClassSimpleTemplateInterface
                 ' public function rules()
                 {
                     return [
-
+                        "perPage" => ["numeric"],
+                        "page" => ["numeric"],
+                        "id" => ["numeric"],
                     ];
                 }',
 

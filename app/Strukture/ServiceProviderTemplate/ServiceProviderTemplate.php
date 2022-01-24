@@ -7,6 +7,7 @@ use TimeHunter\LaravelFileGenerator\Interfaces\ClassSimpleTemplateInterface;
 class ServiceProviderTemplate implements ClassSimpleTemplateInterface
 {
     public $name;
+    public $point = '"';
 
     public function __construct($name)
     {
@@ -16,6 +17,7 @@ class ServiceProviderTemplate implements ClassSimpleTemplateInterface
     public function getTemplateData()
     {
         return [
+
             'class_type' => 'class',
             'directory' => app_path() .  '/Modules/V1/'.$this->name.'/Providers',
             'namespace' =>'App\Modules\V1\\'.$this->name.'\Providers',
@@ -35,11 +37,12 @@ class ServiceProviderTemplate implements ClassSimpleTemplateInterface
 
             ],
             'properties' => [
-                'protected $namespace = App\Modules\V1\\'.$this->name.'\Http\Controllers',
-                'protected $apiPrefix = /api/v1/',
-                'protected $defer = false'
+               
             ],
             'functions' => [
+                'protected $namespace = "App\Modules\V1\\'.$this->name.'\Http\Controllers";',
+                'protected $apiPrefix = "/api/v1/";',
+                'protected $defer = false;',
                 'public function boot()
                 {
                     $this->registerConfig();

@@ -5,7 +5,8 @@ namespace App\Strukture\ConfigTemplate;
 use TimeHunter\LaravelFileGenerator\Interfaces\ClassSimpleTemplateInterface;
 use TimeHunter\LaravelFileGenerator\Interfaces\RouteSimpleTemplateInterface;
 
-class ConfigTemplate implements RouteSimpleTemplateInterface
+class ConfigTemplate
+implements ClassSimpleTemplateInterface
 {
     public $name;
 
@@ -14,32 +15,24 @@ class ConfigTemplate implements RouteSimpleTemplateInterface
         $this->name = $name;
     }
 
-
-
     public function getTemplateData()
     {
         return [
-            'route_name' => 'config',
-            'directory' => app_path() .  '/Modules/V1/' . $this->name . '/config',
-            'functions' => [
-                'return [];',
-                    ],
-            'namespace' => '',
-            'prefix' => '',
-            'use' => [],
-            'middleware' => '',
-            'uri' => [
-                [
-                    'uri' => '',
-                    'rules' => [],
-                    'method' => '',
-                    'function' => '',
-                    'class' => '',
-                    'key' => '',
-                    'type' => '' // api, api
 
-                ]
-            ]
+            'class_type' => '',
+            'directory' => app_path() .  '/Modules/V1/' . $this->name . '/config',
+            'namespace' => '',
+            'use' => [],
+            'class_name' => 'config',
+            'extends' => '',
+            'implements' => [],
+            'traits' => [],
+            'properties' => [],
+            'functions' => [
+                'return [];'
+            ],
+            'annotations' => []
         ];
     }
+
 }

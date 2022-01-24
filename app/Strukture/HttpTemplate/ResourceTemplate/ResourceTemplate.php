@@ -22,7 +22,7 @@ class ResourceTemplate implements ClassSimpleTemplateInterface
             'use' => [
                 'Illuminate\Http\Resources\Json\JsonResource',
             ],
-            'class_name' => $this->name.'Resources',
+            'class_name' => $this->name.'Resource',
             'extends' => 'JsonResource',
             'implements' => [],
             'traits' => [

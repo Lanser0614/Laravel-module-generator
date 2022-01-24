@@ -6,9 +6,11 @@ namespace App\Modules\V1\Branch\Repositories\Contracts;
  */
 interface IBranchWriteRepository
 {
-    public function create();
+    public function create($data);
 
-    public function update();
+    public function updateContent($data, $id);
 
-    public function delete();
+    public function delete($id);
+
 }
+

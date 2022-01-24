@@ -55,29 +55,29 @@ class ModuleGenerator extends Command
      */
     public function handle()
     {
-        $filename = 'App/Modules/V1/'.$this->argument('name');
+        $filename = 'App/Modules/V1/' . $this->argument('name');
 
         if (is_dir($filename)) {
             dd('This module alredy exist');
-        }else{
-        LaravelFileGenerator::publish(
-            new ReadInterfaceTemplate($this->argument('name')),
-            new WriteInterfaceTemplate($this->argument('name')),
-            new ReadRepositoryTemplate($this->argument('name')),
-            new WriteRepositoryTemplate($this->argument('name')),
-            new ModelTemplate($this->argument('name')),
-            new ConfigTemplate($this->argument('name')),
-            new ControllerTemplate($this->argument('name')),
-            new CreateRequestTemplate($this->argument('name')),
-            new GetAllRequestTemplate($this->argument('name')),
-            new ResourceTemplate($this->argument('name')),
-            new GetAllCollectionResource($this->argument('name')),
-            new DtoTemplate($this->argument('name')),
-            new GetAllDtoTemplate($this->argument('name')),
-            new ServiceProviderTemplate($this->argument('name')),
-            new RouteTemplate($this->argument('name')),
-
-        );
-    }
+        } else {
+            LaravelFileGenerator::publish(
+                new ReadInterfaceTemplate($this->argument('name')),
+                new WriteInterfaceTemplate($this->argument('name')),
+                new ReadRepositoryTemplate($this->argument('name')),
+                new WriteRepositoryTemplate($this->argument('name')),
+                new ModelTemplate($this->argument('name')),
+                new ConfigTemplate($this->argument('name')),
+                new ControllerTemplate($this->argument('name')),
+                new CreateRequestTemplate($this->argument('name')),
+                new GetAllRequestTemplate($this->argument('name')),
+                new ResourceTemplate($this->argument('name')),
+                new GetAllCollectionResource($this->argument('name')),
+                new DtoTemplate($this->argument('name')),
+                new GetAllDtoTemplate($this->argument('name')),
+                new ServiceProviderTemplate($this->argument('name')),
+                new RouteTemplate($this->argument('name')),
+            );
+        }
+                
     }
 }

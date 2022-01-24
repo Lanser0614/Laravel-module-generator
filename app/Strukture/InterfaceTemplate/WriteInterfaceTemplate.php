@@ -20,9 +20,9 @@ class WriteInterfaceTemplate implements InterfaceSimpleTemplateInterface
             'interface_name' =>'I'.$this->name.'WriteRepository',
             'namespace' => 'App\Modules\V1\\'.$this->name.'\Repositories\Contracts',
             'functions' => [
-                'public function create()',
-                'public function update()',
-                'public function delete()',
+                'public function create($data)',
+                'public function updateContent($data, $id)',
+                'public function delete($id)',
             ],
             "annotations"=>[],
 

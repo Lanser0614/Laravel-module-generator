@@ -10,10 +10,15 @@ use App\Modules\V1\Branch\Http\Requests\BranchCreateRequest;
 class BranchCreateDTO extends BaseDTO
 {
 
-
     public function __construct(BranchCreateRequest $request)
     {
-
         parent::__construct($request);
     }
+
+    public function getBranch(){
+        return [
+            'name' => $this->request->name
+        ];
+    }
+
 }

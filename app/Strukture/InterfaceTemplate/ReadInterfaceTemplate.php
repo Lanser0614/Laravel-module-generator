@@ -20,7 +20,7 @@ class ReadInterfaceTemplate implements InterfaceSimpleTemplateInterface
             'namespace' => 'App\Modules\V1\\'.$this->name.'\Repositories\Contracts',
             'functions' => [
                 'public function get($data)',
-                'public function getById($id)'
+                'public function getByID($id)'
             ],
             "annotations"=>[],
 

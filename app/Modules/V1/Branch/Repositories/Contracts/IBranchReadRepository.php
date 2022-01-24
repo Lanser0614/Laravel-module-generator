@@ -8,5 +8,7 @@ interface IBranchReadRepository
 {
     public function get($data);
 
-    public function getById($id);
+    public function getByID($id);
+
 }
+

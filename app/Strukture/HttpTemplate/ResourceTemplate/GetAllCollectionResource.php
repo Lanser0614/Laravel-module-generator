@@ -32,7 +32,8 @@ class GetAllCollectionResource implements ClassSimpleTemplateInterface
                 '  public function toArray($request): array
                 {
                     return [
-
+                        "message" => "success",
+                        "data" => '.$this->name.'Resource::collection($this->collection)
                     ];
 
                 }',

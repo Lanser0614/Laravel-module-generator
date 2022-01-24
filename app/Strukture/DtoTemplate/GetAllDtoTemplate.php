@@ -32,6 +32,7 @@ class GetAllDtoTemplate implements ClassSimpleTemplateInterface
             'properties' => [
                 'public $perPage',
                 'public $page',
+                'public $id',
             ],
             'functions' => [
                 'public function __construct('.$this->name.'GetAllRequest $request)
@@ -44,6 +45,9 @@ class GetAllDtoTemplate implements ClassSimpleTemplateInterface
                     }
                     if ($this->request->has("page")){
                         $this->page = $this->request->page;
+                    }
+                    if ($this->request->has("id")){
+                        $this->name = $this->request->id;
                     }
                     return (array) $this;
                 }'

@@ -12,12 +12,12 @@ class BranchGetAllDTO extends BaseDTO
 
     public $perPage;
     public $page;
+    public $name;
 
     public function __construct(BranchGetAllRequest $request)
     {
         parent::__construct($request);
     }
-
     public function getDTO()
     {
         if ($this->request->has("perPage")) {
@@ -26,6 +26,10 @@ class BranchGetAllDTO extends BaseDTO
         if ($this->request->has("page")) {
             $this->page = $this->request->page;
         }
+        if ($this->request->has("name")) {
+            $this->name = $this->request->name;
+        }
+        
         return (array) $this;
     }
 }
